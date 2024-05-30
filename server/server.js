@@ -40,10 +40,10 @@ app.post("/create_preference", async (req, res) => {
       items: [
         {
           title: req.body.title,
-          description: item.description,
+          description: req.body.description,
           quantity: Number(req.body.quantity),
           unit_price: Number(req.body.price),
-          id: item.id,
+          id: req.body.id,
           currency_id: "COP",
         },
       ],
