@@ -1,6 +1,6 @@
 
 import  https from 'https';
-import  fs from 'fs';
+// import  fs from 'fs';
 import cors from 'cors'
 import { MercadoPagoConfig, Preference } from "mercadopago";
 import  express from "express";
@@ -10,10 +10,10 @@ dotenv.config();
 
 const client = new MercadoPagoConfig({accessToken: process.env.ACCESS_TOKEN || ""})
 
-const options = {
-  key: fs.readFileSync('./localhost-key.pem'), // Reemplaza con la ruta de tu llave generada
-  cert: fs.readFileSync('./localhost.pem') // Reemplaza con la ruta de tu certificado generado
-}
+// const options = {
+//   key: fs.readFileSync('./localhost-key.pem'), // Reemplaza con la ruta de tu llave generada
+//   cert: fs.readFileSync('./localhost.pem') // Reemplaza con la ruta de tu certificado generado
+// }
 
 
 dotenv.config();
