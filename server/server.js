@@ -106,6 +106,6 @@ app.use((req, res, next) => {
 
 // module.exports = server;
 
-server.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
