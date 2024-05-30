@@ -23,7 +23,7 @@ const port = process.env.PORT || 3000;
 app.use((req, res, next) => {
   console.log('Estableciendo politica de referencia')
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
-  next();
+  // next();
 });
 
 app.use(cors());
