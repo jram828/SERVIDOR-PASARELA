@@ -11,10 +11,10 @@ const client = new MercadoPagoConfig({
   accessToken: process.env.ACCESS_TOKEN || "",
 });
 
-// const options = {
-//   key: fs.readFileSync('./localhost-key.pem'), // Reemplaza con la ruta de tu llave generada
-//   cert: fs.readFileSync('./localhost.pem') // Reemplaza con la ruta de tu certificado generado
-// }
+const options = {
+  key: fs.readFileSync('./localhost-key.pem'), // Reemplaza con la ruta de tu llave generada
+  cert: fs.readFileSync('./localhost.pem') // Reemplaza con la ruta de tu certificado generado
+}
 
 dotenv.config();
 
