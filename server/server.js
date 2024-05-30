@@ -1,5 +1,5 @@
 import https from "https";
-import  fs from 'fs';
+// import  fs from 'fs';
 import cors from "cors";
 import { MercadoPagoConfig, Preference } from "mercadopago";
 import express from "express";
@@ -11,20 +11,20 @@ const client = new MercadoPagoConfig({
   accessToken: process.env.ACCESS_TOKEN || "",
 });
 
-const options = {
-  key: fs.readFileSync('./localhost-key.pem'), // Reemplaza con la ruta de tu llave generada
-  cert: fs.readFileSync('./localhost.pem') // Reemplaza con la ruta de tu certificado generado
-}
+// const options = {
+//   key: fs.readFileSync('./localhost-key.pem'), // Reemplaza con la ruta de tu llave generada
+//   cert: fs.readFileSync('./localhost.pem') // Reemplaza con la ruta de tu certificado generado
+// }
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
-app.use((req, res, next) => {
-  console.log("Estableciendo politica de referencia");
-  res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log("Estableciendo politica de referencia");
+//   res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+//   next();
+// });
 
 app.use(cors());
 app.use(express.json());
@@ -87,6 +87,25 @@ app.use((req, res, next) => {
   res.send("<h1>HTTPS Works!</h1>");
 });
 
-https.createServer(options, app).listen(port, () => {
-  console.log("Server listening on port " + port);
+// https.createServer(options, app).listen(port, () => {
+//   console.log("Server listening on port " + port);
+// });
+
+// const express = require("express");
+// const router = require("./routes");
+// const morgan = require("morgan");
+// const cors = require("cors");
+
+// const server = express();
+
+// server.use(morgan("dev"));
+// server.use(express.json());
+// server.use(cors());
+
+// server.use(router);
+
+// module.exports = server;
+
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
