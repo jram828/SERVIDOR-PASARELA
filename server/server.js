@@ -1,5 +1,5 @@
 import https from "https";
-// import  fs from 'fs';
+import  fs from 'fs';
 import cors from "cors";
 import { MercadoPagoConfig, Preference } from "mercadopago";
 import express from "express";
